@@ -1,17 +1,15 @@
-import React from "react";
+import React, { VFC } from 'react';
 
-import TodolistContainer from "components/TodolistContainer";
-import "./App.css";
-import { Grid } from "@mui/material";
+import TodolistContainer from 'components/TodolistContainer';
+import './App.css';
+import { Grid } from '@mui/material';
 
-function App() {
-  return (
-    <Grid container >
-      <Grid item>
-        <TodolistContainer />
-      </Grid>
+const App: VFC = () => (
+  <Grid container>
+    <Grid item>
+      <TodolistContainer />
     </Grid>
-  );
-}
+  </Grid>
+);
 
 export default App;
