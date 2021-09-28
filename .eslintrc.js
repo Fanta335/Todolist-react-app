@@ -28,6 +28,7 @@ module.exports = {
     '@typescript-eslint',
     'import',
     'jsx-a11y',
+    'prefer-arrow',
     'react',
     'react-hooks',
   ],
