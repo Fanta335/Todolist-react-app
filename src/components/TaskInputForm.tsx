@@ -20,6 +20,7 @@ const TaskInputForm: VFC<Props> = (props) => {
           label="write a task"
           variant="standard"
           fullWidth
+          autoComplete='off'
           onChange={handleChange}
           value={textInput}
         />
