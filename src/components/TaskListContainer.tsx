@@ -39,16 +39,16 @@ const TodolistContainer: VFC = () => {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1, overflow: 'hidden', px: 3, py: 4 }}>
+      <Box sx={{ flexGrow: 1,  px: 3, py: 4, maxWidth:'50%' }}>
         <Grid container direction="column" spacing={4}>
-          <Grid item>
+          <Grid item xs>
             <TaskInputForm
               onClick={createTask}
               handleChange={handleChange}
               textInput={textInput}
             />
           </Grid>
-          <Grid item>
+          <Grid item xs>
             <TaskList tasks={tasks} onClick={deleteTask} />
           </Grid>
         </Grid>

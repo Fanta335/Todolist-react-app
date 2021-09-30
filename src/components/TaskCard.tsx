@@ -1,4 +1,10 @@
-import { Button, Card, CardContent, Typography } from '@mui/material';
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Typography,
+} from '@mui/material';
 import { VFC } from 'react';
 
 type Props = {
@@ -16,15 +22,27 @@ const TaskCard: VFC<Props> = (props) => {
 
   return (
     <>
-      <Card variant="outlined" sx={{ mb: 2 }}>
+      <Card
+        variant="outlined"
+        sx={{ mb: 2, width: '100%', maxWidth: 500, overflow: 'auto' }}
+      >
         <CardContent>
           <Typography variant="h5" component="div">
-            TODO {task.id}: {task.description}
+            TODO {task.id}:
           </Typography>
-          <Button variant="outlined" color="error" onClick={()=>onClick(task)}>
+          <Typography variant="h6" gutterBottom>
+            {task.description}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button
+            variant="outlined"
+            color="error"
+            onClick={() => onClick(task)}
+          >
             Delete
           </Button>
-        </CardContent>
+        </CardActions>
       </Card>
     </>
   );

@@ -10,6 +10,8 @@ type Props = {
 const TaskInputForm: VFC<Props> = (props) => {
   const { onClick, handleChange, textInput } = props;
 
+  const disabled = textInput === '';
+
   return (
     <Grid container spacing={3} justifyContent="center" alignItems="center">
       <Grid item xs={10}>
@@ -23,9 +25,15 @@ const TaskInputForm: VFC<Props> = (props) => {
         />
       </Grid>
       <Grid item xs={2}>
-        <Button variant="contained" onClick={onClick}>
-          Create
-        </Button>
+        {disabled ? (
+          <Button variant="contained" onClick={onClick} disabled>
+            Create
+          </Button>
+        ) : (
+          <Button variant="contained" onClick={onClick}>
+            Create
+          </Button>
+        )}
       </Grid>
     </Grid>
   );
