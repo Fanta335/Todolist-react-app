@@ -1,4 +1,4 @@
-import { VFC } from 'react';
+import { memo, VFC } from 'react';
 
 import TaskCard, { Task } from './TaskCard';
 
@@ -7,7 +7,7 @@ type Props = {
   onClick: (target: Task) => void;
 };
 
-const TaskList: VFC<Props> = (props) => {
+const TaskList: VFC<Props> = memo((props) => {
   const { tasks, onClick } = props;
 
   return (
@@ -19,6 +19,6 @@ const TaskList: VFC<Props> = (props) => {
           ))}
     </>
   );
-};
+});
 
 export default TaskList;

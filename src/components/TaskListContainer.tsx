@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { useState, VFC } from 'react';
+import React, { useCallback, useState, VFC } from 'react';
 import { Task } from './TaskCard';
 import TaskInputForm from './TaskInputForm';
 import TaskList from './TaskList';
@@ -29,10 +29,13 @@ const TodolistContainer: VFC = () => {
     setTasks(prevTasks);
   };
 
-  const deleteTask = (target: Task) => {
-    const newTasks: Task[] = tasks.slice().filter((t) => t !== target);
-    setTasks(newTasks);
-  };
+  const deleteTask = useCallback(
+    (target: Task) => {
+      const newTasks: Task[] = tasks.slice().filter((t) => t !== target);
+      setTasks(newTasks);
+    },
+    [tasks],
+  );
 
   return (
     <>
